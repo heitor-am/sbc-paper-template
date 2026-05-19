@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Pre-commit hook: bloqueia commit em caso de citações quebradas.
+# Compile completo fica para o CI (mais rápido aqui, defesa em duas camadas).
+# Bypass (não recomendado): git commit --no-verify
+
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+CITE_OUTPUT=$(./scripts/check.sh citations 2>&1 || true)
+
+# Detecta se há citações quebradas (cite sem entry no .bib)
+if echo "$CITE_OUTPUT" | grep -qE "❌ "; then
+  echo "❌ Pre-commit: citações quebradas"
+  echo "$CITE_OUTPUT" | grep -E "❌ " | sed 's/^/   /'
+  echo
+  echo "Resolva ou use: git commit --no-verify"
+  exit 1
+fi
+
+exit 0

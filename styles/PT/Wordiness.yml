@@ -1,0 +1,32 @@
+extends: substitution
+message: "Reduzir: '%s' → '%s'"
+level: suggestion
+ignorecase: true
+swap:
+  'apesar do fato de que': 'embora'
+  'devido ao fato de que': 'porque'
+  'pelo fato de que': 'porque'
+  'em virtude do fato de': 'devido a'
+  'no que diz respeito a': 'sobre'
+  'em relação a': 'sobre'
+  'com relação a': 'sobre'
+  'a respeito de': 'sobre'
+  'a fim de': 'para'
+  'com o objetivo de': 'para'
+  'com a finalidade de': 'para'
+  'com o intuito de': 'para'
+  'por meio de': 'via'
+  'por intermédio de': 'via'
+  'a partir do momento em que': 'quando'
+  'no decorrer de': 'durante'
+  'no caso de que': 'se'
+  'caso seja': 'se for'
+  'um grande número de': 'muitos'
+  'a maior parte de': 'a maioria de'
+  'em grande quantidade': 'muito'
+  'um percentual de': ''
+  'pode ser observado que': 'observa-se que'
+  'pode ser visto que': 'vê-se que'
+  'é possível concluir que': 'conclui-se que'
+  'é possível observar que': 'observa-se que'
+  'é possível notar que': 'nota-se que'

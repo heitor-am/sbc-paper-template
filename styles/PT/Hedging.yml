@@ -1,0 +1,19 @@
+extends: existence
+message: "Linguagem evasiva: '%s' — em paper acadêmico, dizer direto."
+level: suggestion
+ignorecase: true
+tokens:
+  - 'é importante (notar|mencionar|destacar|ressaltar|frisar|enfatizar)'
+  - 'vale (notar|mencionar|destacar|ressaltar) que'
+  - 'cabe (mencionar|destacar|ressaltar|salientar)'
+  - 'pode-se dizer que'
+  - 'é interessante notar que'
+  - 'de certa forma'
+  - 'de alguma maneira'
+  - 'de modo geral'
+  - 'no geral'
+  - 'em geral'
+  - 'basicamente'
+  - 'essencialmente'
+  - 'fundamentalmente'
+  - 'praticamente'

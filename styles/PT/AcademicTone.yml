@@ -1,0 +1,17 @@
+extends: existence
+message: "Coloquial em paper acadêmico: '%s'"
+level: warning
+ignorecase: true
+tokens:
+  - '\bbem mais\b'
+  - '\bbem menos\b'
+  - '\bum monte de\b'
+  - '\bum bocado\b'
+  - '\bcoisa\b'
+  - '\bcoisas\b'
+  - '\bjeito de\b'
+  - '\bdar uma olhada\b'
+  - '\bna real\b'
+  - '\bna verdade\b'
+  - '\bno final das contas\b'
+  - '\bdo ponto de vista de que\b'

@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,fit,backgrounds,calc}
+
+\graphicspath{{figures/}}
+
+\sloppy
+
+\title{Paper Title Goes Here}
+
+\author{First Author\inst{1}, Second Author\inst{1}}
+
+\address{Department of Computing \\
+  University Name (UNI) \\
+  City -- State -- Country
+  \email{first.author@example.com, second.author@example.com}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+% TODO: Abstract (150-200 words). Cover: context, problem, proposal,
+% approach/methodology, results/contributions.
+\end{abstract}
+
+\begin{resumo}
+% TODO: Resumo em portugu\^es (150-200 palavras). Estrutura paralela ao
+% abstract: contexto, problema, proposta, abordagem, resultados/contribui\c{c}\~oes.
+\end{resumo}
+
+\input{sections/01-introducao}
+\input{sections/02-referencial-teorico}
+\input{sections/03-trabalhos-relacionados}
+\input{sections/04-abordagem}
+\input{sections/05-experimentos}
+\input{sections/06-conclusao}
+
+\bibliographystyle{sbc}
+\bibliography{refs}
+
+\end{document}

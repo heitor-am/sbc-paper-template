@@ -1,0 +1,27 @@
+extends: existence
+message: "Redundância: '%s'"
+level: warning
+ignorecase: true
+tokens:
+  - 'totalmente completo'
+  - 'totalmente completa'
+  - 'completamente cheio'
+  - 'consenso (unânime|geral)'
+  - 'planejamento prévio'
+  - 'previamente planejado'
+  - 'pré-requisito necessário'
+  - 'principal protagonista'
+  - 'monopólio exclusivo'
+  - 'há (muitos )?anos atrás'
+  - 'novidade inédita'
+  - 'todos foram unânimes'
+  - 'criar novo'
+  - 'duas metades iguais'
+  - 'goteja gota a gota'
+  - 'maioria absoluta'
+  - 'sintomas indicativos'
+  - 'voltar atrás'
+  - 'subir para cima'
+  - 'descer para baixo'
+  - 'entrar para dentro'
+  - 'sair para fora'

@@ -1,0 +1,62 @@
+name: Build TCC Paper
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          latexmk_use_xelatex: false
+          latexmk_use_lualatex: false
+
+      - name: Report page count
+        id: pagecount
+        run: |
+          if ! command -v pdfinfo >/dev/null; then
+            sudo apt-get update && sudo apt-get install -y poppler-utils
+          fi
+          PAGES=$(pdfinfo main.pdf | awk '/^Pages:/ {print $2}')
+          echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+          echo "📄 PDF gerado com $PAGES páginas (alvo: 6-12)"
+          if [ "$PAGES" -lt 6 ]; then
+            echo "::warning::Paper abaixo do mínimo (6 páginas): $PAGES"
+          elif [ "$PAGES" -gt 12 ]; then
+            echo "::error::Paper acima do limite (12 páginas): $PAGES"
+            exit 1
+          fi
+
+      - name: Check citations health
+        run: |
+          chmod +x scripts/check.sh
+          ./scripts/check.sh citations
+
+      - name: Upload PDF artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tcc-paper-pdf
+          path: main.pdf
+          retention-days: 30
+
+      - name: Upload build log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-build-log
+          path: |
+            main.log
+            main.aux
+            main.blg
+          retention-days: 7

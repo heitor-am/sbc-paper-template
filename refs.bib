@@ -1,0 +1,28 @@
+% =============================================================================
+% Bibliography
+%
+% Conventions:
+%  - Keys in lastname{year}slug style (e.g., cormack2009rrf, edge2024graphrag)
+%  - Full metadata: authors, venue (booktitle/journal), volume/number/pages,
+%    year, DOI or arXiv eprint when applicable
+%  - For software/institutional sources, use @misc with authoritative URL
+%
+% Tooling:
+%  - ./scripts/resolve-ref.sh search "<query>"    — CrossRef lookup
+%  - ./scripts/resolve-ref.sh fetch <DOI>          — fetch full BibTeX
+%  - ./scripts/resolve-ref.sh arxiv <id>           — generate from arXiv
+%  - ./scripts/check.sh citations                  — broken/orphan check
+%  - ./scripts/audit-refs.sh                       — bibliography quality audit
+% =============================================================================
+
+% Example entry (remove or adapt for your paper):
+@article{example2024,
+  author    = {Lastname, First Initial and Othername, Second Initial},
+  title     = {An Example Paper Title},
+  journal   = {Journal of Examples},
+  volume    = {1},
+  number    = {1},
+  pages     = {1--10},
+  year      = {2024},
+  doi       = {10.0000/example.0001}
+}

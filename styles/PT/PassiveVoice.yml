@@ -1,0 +1,8 @@
+extends: existence
+message: "Possível voz passiva: '%s' — considere ativa quando o agente é claro."
+level: suggestion
+ignorecase: true
+raw:
+  - \b(é|foi|são|foram|será|serão|seria|seriam|sendo|sido|está|estão|estava|estavam)\s+
+tokens:
+  - '\w+(ado|ada|ados|adas|ido|ida|idos|idas)\b'
