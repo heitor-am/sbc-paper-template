@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Verifica saúde do paper TCC: citações, figuras, páginas, palavras.
+# Verifica saúde do paper: citações, figuras, páginas, palavras.
 # Uso: ./scripts/check.sh <comando>
 #   citations  — lista \cite{TODO-*} pendentes, órfãs no .bib, e quebradas
 #   figures    — figuras com label sem ref, ou refs sem label

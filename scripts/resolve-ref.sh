@@ -35,7 +35,7 @@ case "$CMD" in
     echo
 
     if ! RESPONSE=$(curl -fsSL --max-time 15 \
-        -H "User-Agent: tcc-docsmith/1.0 (mailto:heitorandrade2001@gmail.com)" \
+        -H "User-Agent: sbc-paper-template/1.0 (https://github.com/heitor-am/sbc-paper-template)" \
         "https://api.crossref.org/works?query.bibliographic=$ENC&rows=5"); then
       echo "❌ Falha ao consultar CrossRef" >&2
       exit 1
@@ -61,7 +61,7 @@ case "$CMD" in
     # Usa content negotiation via doi.org (mais confiável que api.crossref.org/works/X)
     if ! BIBTEX=$(curl -fsSL --max-time 15 \
         -H "Accept: application/x-bibtex; charset=utf-8" \
-        -H "User-Agent: tcc-docsmith/1.0 (mailto:heitorandrade2001@gmail.com)" \
+        -H "User-Agent: sbc-paper-template/1.0 (https://github.com/heitor-am/sbc-paper-template)" \
         "https://doi.org/$DOI"); then
       echo "❌ Falha ao buscar BibTeX para DOI: $DOI" >&2
       exit 1

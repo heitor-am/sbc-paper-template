@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Compila o paper TCC e reporta status.
+# Compila o paper e reporta status.
 # Uso: ./scripts/compile.sh [--quiet]
 
 set -euo pipefail
