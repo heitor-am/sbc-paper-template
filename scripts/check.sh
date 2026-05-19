@@ -7,7 +7,11 @@
 #   words      — palavras por seção (estimativa)
 #   all        — todos os checks
 
-set -euo pipefail
+set -uo pipefail
+# Intentionally not using `set -e`: grep exits non-zero when there are
+# no matches (e.g., empty paper with no \cite commands), which is a
+# normal state for this audit script. Functions below check return
+# values explicitly when needed.
 
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$PROJECT_ROOT"
